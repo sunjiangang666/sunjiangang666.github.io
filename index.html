@@ -8,15 +8,85 @@
 		<link rel="shortcut icon" href="img/16X16.ico"/>
 		<!--网页log-->
 	</head>
+		<!--表单验证-->
+	<script type="text/javascript" >
+		function sub(){
+			var user=document.getElementById("user");
+			var pass=document.getElementById("pass");
+			var err=document.getElementById("err");
+			var err1=document.getElementById("err1");			
+			if(space(user.value)=="zhaomengge"){
+				//alert("请输入用户名！");
+				//err.style.display="block";				
+				err.style.opacity="0";
+				user.style.borderColor="#3399cc";	
+				user.focus();
+			//	return true;
+			}else{
+				err.style.opacity="10";
+				user.style.borderColor="red";
+				return false;
+			}	
+			if(space(pass.value)=="00000000"){
+				err1.style.opacity="0";
+				pass.style.borderColor="#3399cc";
+				user.focus();
+			}else{
+				err1.style.opacity="10";
+				pass.style.borderColor="red";
+				return false;
+			}
+		}
+		function space(str){//定义方法  去除两端空格
+			return str.replace(/(^\s*)|(\s*$)/g,"");
+		}
+	</script>
 	<style type="text/css">
+		::-webkit-scrollbar {
+		  width: 8px;	
+		  height: 8px;
+	} /* 这是针对缺省样式 (必须的) */
+	::-webkit-scrollbar-track{
+		background-color: #FF00FF;	
+		border-radius: 5px;
+	}/*滑动条滑轨背景色*/
+	::-webkit-scrollbar-track-piece  { 
+		/*background-color: red;*/
+			
+		 }	
+	::-webkit-scrollbar-thumb{
+		background-color: purple;
+		border-radius: 5px;
+	}
+	/*::-webkit-scrollbar-button{
+		background-color: #FF00FF;		
+	}*/
+	/*滑轨两侧监听按钮*/
+	::-webkit-scrollbar-corner {
+		  background-color:#99CC66 ;
+	} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+	
+/*ie特有属性*/
+Body {
+	background-color: #FF99CC ;
+scrollbar-arrow-color: #f4ae21;  /*图6,三角箭头的颜色*/
+scrollbar-face-color: #333;  /*图5,立体滚动条的颜色*/
+scrollbar-3dlight-color: #666;  /*图1,立体滚动条亮边的颜色*/
+scrollbar-highlight-color: #666;  /*图2,滚动条空白部分的颜色*/
+scrollbar-shadow-color: #999;  /*图3,立体滚动条阴影的颜色*/
+scrollbar-darkshadow-color: #666;  /*图4,立体滚动条强阴影的颜色*/
+scrollbar-track-color: #666;  /*图7,立体滚动条背景颜色*/
+
+scrollbar-base-color:#f8f8f8;  /*滚动条的基本颜色*/
+Cursor:url(mouse.cur);  /*自定义个性鼠标*/
+}
+
 		body{
 		background-image: url(img/lang_bg.jpg);
 		background-repeat: no-repeat;
-		background-size: cover;
-		
+		background-size: cover;		
 		background-attachment: fixed;
-		/*设置背景图像是否固定或者随着页面的其余部分滚动，当设置为fixed时页面的其余部分滚动时，背景图像不会移动。 
-*/
+		/*设置背景图像是否固定或者随着页面的其余部分滚动，当设置为fixed时页面的其余部分滚动时，背景图像不会移动。 */
 		}
 		.lang_{
 			width:30%;
@@ -43,25 +113,29 @@
 			width:228px;
 			text-align: center;
 		}
-		p{
-		
+		p{		
 			text-align: center;
 			color: #3399cc;
 			font-family: "微软雅黑";
 			font-size: 15px;
 			line-height: 10px;
 			margin: auto;
-			margin-top: 20px;
-			
+			margin-top: 20px;			
 		}
 		input{
 			border: 2px solid #3399cc ;
 			width: 60%;				
 			background-color: #99cccc;
 			border-radius: 5px;
-			margin-bottom: 4px;
-				
-					
+			margin-bottom: 4px;					
+		}
+		#err ,#err1{
+			/*display:none;*/
+			font-size: 12px;
+			color: red;
+			margin-left: 70px;
+			opacity: 0;
+			margin-top:0px ;			
 		}
 		 a{
 			text-decoration: none;		;
@@ -69,7 +143,7 @@
 			float: right;	
 		
 			}
-	.sub{
+		.sub1{
 		color: #FF6666;
 		width: 90px;
 		margin-bottom: 50px;
@@ -82,7 +156,7 @@
     	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#BBFFEE', 		endColorstr='#00DDDD');
     	/*实现提交按钮渐变效果*/
 	}
-	.sub:hover{
+	.sub1:hover{
 		-moz-box-shadow: 0px 0px 15px #0099ff;
  	 	-webkit-box-shadow: 0px 0px 15px #0099ff;
   		box-shadow: 0px 0px 15px #0099ff;
@@ -98,19 +172,18 @@
 	<body>
 		<div class="lang_">			
 			<h1>孙健刚的个人网站</h1>			
-			<form action="#" method="post">
-				<p>用户名称&nbsp;:&nbsp;<input type="text"name="txt" /><br />
-				</p>
+			<form action="home.html" method="get" onsubmit="return sub();">
+				<p>用户名称&nbsp;:&nbsp;<input type="text"name="user" id="user" /><br /></p>
+				<span class="err" id="err">用户名错误！</span>
 				<a  href="register.html">没有账户？</a>	
-				<br />
-				
-				<p>用户密码&nbsp;:&nbsp;<input type="password" name="pass" /><br />			
-				</p>
-				<a href="#">忘记密码！</a><br/>
-					<input  class="sub" type="submit" name="sub" value="登  陆" />
-					
-					<input class="sub" type="reset" name="res"value="取  消" />
+				<br />				
+				<p>用户密码&nbsp;:&nbsp;<input type="password" name="pass" id="pass"/><br /></p>
+				<span class="err1" id="err1">密码错误！</span>
+				<a href="#">忘记密码！</a>
+				<br/>
+					<input  class="sub1" type="submit" name="dl" value="登  陆" />					
+					<input class="sub1" type="reset" name="res"value="取  消" />
 			</form>
 		</div>
-	</body>
+	</body>	
 </html>
