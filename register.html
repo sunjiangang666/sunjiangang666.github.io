@@ -6,52 +6,368 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>注册个人账户</title>
-		<link rel="shortcut icon" href="img/32X32.ico" />
+		<link rel="shortcut icon" href="img/16X16.ico" />
 		<!--网页log-->
 	</head>
+
+	<script type="text/javascript">
+		
+	
+
+		
+	//验证码
+		var code;
+		//设全局变量用于保存验证码
+		function txtyzm(){
+			code="";
+			//默认code为空字符串
+			var codelength = 4;
+			var codev=document.getElementById('txt_yzm');		
+			var random=new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','M','L','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+			//设置随机字符
+			for(var i = 0;i<codelength;i++){
+				//循环codelength
+				var index= Math.floor(Math.random()*36);
+				//设置随机数范围。0~36
+				code += random[index];
+				//字符拼接，将每次随机字符进行拼接
+			}
+			codev.value=code;
+			//将拼接好的字符串赋值给展示value
+		}	
+		//checkbox图片样式
+		function yesW(){
+			var Yes=document.getElementById("yes");
+			var sub=document.getElementById("val");
+//三目运算符
+		var Flag=(Yes.getAttribute("src")=="img/checkbox_check2x.png");
+		Yes.src=Flag?"img/checkbox_normal2x.png":"img/checkbox_check2x.png";
+		
+}
+		function Arr(){
+			var Arrow=document.getElementById("arrow");	
+			var Policy=document.getElementById("arrow_policy");
+			var Flag=(Arrow.getAttribute("src")=="img/arrow_down.png");
+			Arrow.src=Flag?"img/arrow_up.png":"img/arrow_down.png";
+		if(Arrow.getAttribute("src")=="img/arrow_up.png"){
+			Policy.style.display="block";
+			}else{
+			
+			Policy.style.display="none";
+			}
+			
+		}
+		
+		//		*****************表单验证******************//
+		//实现检测用户名不为空不为null true显示hook1(后面勾号)，否之显示下方.exclamation1下span里的提示 提交失败
+		//实现检测用户密码不为空不为null true显示hook2(后面勾号)，否之显示下方.exclamation2下span里的提示 提交失败
+		//实现检测用户是否同意相关服务条款 (判断当前显示图片是否为为checkbox_check2x.png 同意(打勾的图片) img为checkbox_normal2x.png则不同意)
+		//满足上面三个条件 提交表单
+		function onblurs(){
+			var  User=document.getElementById("user");//用户框内容
+			var Pass=document.getElementById("pass");//密码
+			var Exc1=document.getElementById("exclamation1");//提示
+			var Hook1=document.getElementById("hook1");//对号
+			var Exc2=document.getElementById("exclamation2");//密码提示
+			var Hook2=document.getElementById("hook2");//密码对号
+			var Span=document.getElementById("pass_span");
+			var YZ=document.getElementById("txt_yz").value.toUpperCase();	//验证输入框 取得输入验证码并转换为大写
+			var Exc3=document.getElementById("exclamation3");//密码提示
+			var yzerror=document.getElementById("yz_error");
+			
+			if(User.value==""){
+				Exc1.style.display="block";	
+				Hook1.style.display="none";
+			}else{		//判断用户输入信息
+				Exc1.style.display="none";
+				Hook1.style.display="block";
+			}
+			if(Pass.value=="" || Pass.value.length<6){
+				Exc2.style.display="block";	
+				Hook2.style.display="none";				
+			}else{			//判断用户输入密码信息
+				Exc2.style.display="none";
+				Hook2.style.display="block";
+			}
+			if(YZ.length <= 0){
+				yzerror.innerHTML="验证码不能为空!";
+				Exc3.style.display="block";
+			}else if (YZ != code){		//判断验验证码输入是否相同
+				yzerror.innerHTML="验证码输入错误!";
+			}else{
+				Exc3.style.display="none";
+			}
+		}
+		function sub(){//注册按钮
+			if()
+		}
+
+		
+			function space(str){//定义方法  去除两端空格
+			return str.replace(/(^\s*)|(\s*$)/g,"");
+		}	
+
+	</script>
 	<style>
+			::-webkit-scrollbar {
+		  width: 8px;	
+		  height: 8px;
+	} /* 这是针对缺省样式 (必须的) */
+	::-webkit-scrollbar-track{
+		background-color: #FF00FF;	
+		border-radius: 5px;
+	}/*滑动条滑轨背景色*/
+	::-webkit-scrollbar-track-piece  { 
+		/*background-color: red;*/
+			
+		 }	
+	::-webkit-scrollbar-thumb{
+		background-color: purple;
+		border-radius: 5px;
+	}
+	/*::-webkit-scrollbar-button{
+		background-color: #FF00FF;		
+	}*/
+	/*滑轨两侧监听按钮*/
+	::-webkit-scrollbar-corner {
+		  background-color:#99CC66 ;
+	} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+	Body {
+	/*background-color: #FF99CC ;*/
+scrollbar-arrow-color: #f4ae21;  /*图6,三角箭头的颜色*/
+scrollbar-face-color: #333;  /*图5,立体滚动条的颜色*/
+scrollbar-3dlight-color: #666;  /*图1,立体滚动条亮边的颜色*/
+scrollbar-highlight-color: #666;  /*图2,滚动条空白部分的颜色*/
+scrollbar-shadow-color: #999;  /*图3,立体滚动条阴影的颜色*/
+scrollbar-darkshadow-color: #666;  /*图4,立体滚动条强阴影的颜色*/
+scrollbar-track-color: #666;  /*图7,立体滚动条背景颜色*/
+
+scrollbar-base-color:#f8f8f8;  /*滚动条的基本颜色*/
+Cursor:url(mouse.cur);  /*自定义个性鼠标*/
+}
+	
  /*************************左边轮播图片**************************************/  
 		#frame{   /*图片轮播相框容器*/
 			display: block;
 			position: absolute;
 			left: 0px;
 			top: 0px;
-			width: 500px;
-			height: 100%;
+			width:500px;
+			height: 700px;
 		/*	border: 1px solid red;	*/		
 			overflow: hidden;
 			/*相框作用只显示一个图片
 			 */
 		}
-		#carousel img{		
-			float: left;
+		.carousel{
 			width: 500px;
-			/*position: absolute;	*/
-		}
-		#carousel{
-			width: calc(500px * 5);/*修改图片数量需要修改下面图片参数*/
-			position: absolute;z-index: 9px;/*设置总的图片宽度达到图片轮播效果*/
+			height: 100%;
+			width: calc(700px * 5);/*修改图片数量需要修改下面图片参数*/
+			position: absolute;
+			z-index: 9px;/*设置总的图片宽度达到图片轮播效果*/
+			animation: ma 20s ease-out infinite alternate;/*应用动画*/  
 		
 		}
-		 .carousel{
-            	animation: ma 20s ease-out infinite alternate;/*应用动画*/  
-            }
-        .he{
+		.carousel img{		
+			float: left;			
+			/*background-size: 100% 100% ;*/
+			width: 500px;
+			height:100%;			
+			/*position: absolute;	*/
+		}
+
+            
+      /**********************右边注册板块*****************************************/          
+        .right_{
  		position: absolute;
- 		left: 500px;
+ 		left:56%;
  		top: 0px;
- 		border:1px solid red;
- 		width: 100px;
- 		height: 100px;
+ 		/*border:1px solid red;*/
+ 		width: 550px;		
  	}
-		@keyframes ma {/*---每图片切换有两个阶段：位移切换和静置。中间的效果可以任意定制----*/  
+ 		.right_top{
+ 			float: left;
+ 			margin-top: 30px;
+ 			
+ 		}
+ 		.ul1{
+ 			font-family:"微软雅黑";
+ 			font-size:20px;
+ 			margin: 0px;
+ 			padding: 0px;
+ 		}	
+ 		.ul1 li{
+ 			list-style: none;
+ 			/*去li标签圆点*/
+ 			float:left;
+ 			/*向左浮动横向排列*/
+ 			
+ 		}
+ 		.ul1 li a{
+ 			text-decoration: none;
+ 			/*去除a标签下划线*/
+ 			display: block;
+ 			/*设为块级元素*/
+ 			padding: 5px 50px;
+ 			/*内边距*/
+ 			background:linear-gradient(#BBFFEE,#00DDDD);
+ 			/*背景颜色渐变*/
+ 			color: gray;
+ 			/*字体颜色*/
+ 			border-right: 1px solid white;
+ 			/*右边边框线*/
+ 			
+ 		}
+ 		.ul1 li a.last{
+ 			border-right: 0;
+ 		}
+ 		.ul1 li a:hover{
+ 			background:#00DDDD ;
+ 			color: white;
+ 		}
+ 		
+ 		.right_m{
+ 			/*display: block;*/
+ 			float: left; 
+ 			margin-left: 20px;	
+ 			font-family: "微软雅黑";
+	
+ 			}
+ 		.right_h1{
+ 			display: block;
+ 			font-size: 50px;
+ 			font-weight: 400;
+ 			margin: 10px 0px;
+					
+ 		}
+ 		.love{
+ 			color:#00DDDD ;
+ 			font-size: 25px;
+ 			margin-top: 10px;		
+ 		}
+ 		form{		
+ 		}
+ 		.register_form{
+ 			
+		
+ 		}
+ 		.user,.pass{
+ 			width: 370px;
+ 			height: 30px;
+ 			margin: 20px 0px;
+ 			padding: 10px 15px;
+ 			font-family: "微软雅黑";
+ 			font-size: 20px;
+ 			border: 1px solid #707070;
+ 			border-radius:3px;			
+ 		}
+ 		.txt_yz{
+ 			width: 100px;
+ 			height: 30px;
+ 			margin: 10px 0px;	
+ 			font-family: "微软雅黑";
+ 			font-size: 25px;
+ 			padding: 10px 15px;
+ 			border: 1px solid #707070;
+ 			border-radius: 3px;
+ 			
+ 		}
+ 		.txt_yzm{
+ 			display: block;
+ 			float: left;
+ 			width: 130px;
+ 			height: 51px;
+ 			font-family:Arial; 
+ 			margin: 10px 20px;
+ 			font-size: 25px; 			
+ 			font-style:italic;		
+ 			border: 1px solid #707070;	
+ 			letter-spacing: 5px;
+ 			
+ 		}
+ 		.val{
+ 			display: block;
+ 			width: 400px;
+ 			height: 50px;
+ 			margin-top: 30px;
+ 			border: 0px ;
+ 			background-color: #00DDDD;
+ 			border-radius:3px;
+ 			color: white;
+ 			font-size: 20px;
+ 			letter-spacing:5px;
+ 			/*字符间距*/
+ 		}	
+ 		.val:hover{
+ 			background-color: #00cccc;
+ 		}
+ 		.user:hover{border-color: #00DDDD;}
+ 		.pass:hover{border-color: #00DDDD;}
+ 		.txt_yz:hover{border-color: #00DDDD;}
+ 		.label_{
+ 		width: 384px;
+ 		height: 100%;
+ 		}	
+ 		/*input[type='checkbox']{
+ 			display: none;
+ 		}/*隐藏input下的所有checkbox*/
+ 		.check1{
+ 			display: block;
+ 			float: left;
+ 			margin-top: 20px;
+ 			width:380px;
+ 			height: 36px;
+ 			background-repeat: no-repeat; 			
+ 			margin-top: 10px;
+ 		/*	background-position: 0 0px;*/
+ 		}
+		.yes{
+			position: absolute;			
+			left: 0px;
+			margin: 10px 17px;			
+		}
+
+		.ysssr{
+			float: left;
+			margin-left: 30px;
+			margin-top: 18px;		
+		}	
+		.arrow{
+			margin-top: 21px;
+			margin-left: 10px;
+			width: 18px;
+			height: 18px;
+		
+		}
+		.arrow_policy{
+			margin-left: 22px;
+			float: left;	
+			display: none;	
+		}
+		.arrow_policy a{
+			color:#39c;
+		}
+		.arrow_policy a:hover{
+			color:#30c;
+		}
+		/***********错误验证****************/
+		.exclamation1, .exclamation2, .exclamation3{
+			display: none;			
+		}
+		.hook1, .hook2{
+			float: right;
+			margin-top: 30px;
+			/*display: none;*/
+		}
+		@keyframes ma {/*-左侧轮播动画--每图片切换有两个阶段：位移切换和静置。中间的效果可以任意定制----*/  
             0%,20% {        margin-left: 0px;       }  
             25%,40% {       margin-left: -500px;    }  
             45%,60% {       margin-left: -1000px;    }  
             65%,80% {       margin-left: -1500px;    }  
             85%,100% {      margin-left: -2000px;   }
-        /**********************右边注册板块*****************************************/
- 
+   
+ }
+	
 	</style>
 	<body>
 		<!--左边轮播图片-->
@@ -65,7 +381,66 @@
 			</div>
 		</div>
 		<!--右边注册板块-->
-		<div class="he"></div>
-		
+			<!--导航栏-->
+		<div class="right_" id="right_">
+			<div class="right_top" id="right_top">
+				<ul class="ul1" id="ul1">
+					<li><a href="#">首页</a></li>
+					<li><a href="#">邮箱注册</a></li>
+					<li><a href="#">联系站长</a></li>
+				</ul>				
+			</div>
+			<!--字体-->
+			<div class="right_m" id="right_m">
+				<h1 class="right_h1">欢迎注册</h1>
+				<p class="love">Love you every day !</p>
+				<!--表单-->
+				<form id="form1" action="home.html" method="get" onclick="sub()">
+					<div class="register_form" id="register_form">					
+						<input type="text" name="user" id="user" class="user" placeholder="昵称"  maxlength="12"  onblur="onblurs();" />
+						<img  src="img/hook.svg" class="hook1" id="hook1" />				
+						<br />
+						<div id="exclamation1" class="exclamation1" style="line-height: 20px;"><img src="img/exclamation_mark_32px.png" style="width: 20px; height: 20px; vertical-align: middle;"/>&nbsp;
+							<span  style="color: red;" >用户名不能为空！</span></div>
+						
+									<!--用户框
+							js实现验证是否为空true显示警示框(exclamation1) false显示对号(hook1)
+						-->
+						<input type="password" name="pass" id="pass" class="pass" placeholder="密码"min="8" maxlength="16" onblur="onblurs();" />
+						<img  src="img/hook.svg" class="hook2" id="hook2" /><br />
+						<div id="exclamation2" class="exclamation2" style="line-height: 20px;">
+							<img src="img/exclamation_mark_32px.png" style="width: 20px; height: 20px; vertical-align: middle;"/>&nbsp;
+							<span id="pass_span" style="color: red;">密码不能为空且不能少于六位数!</span>
+						</div>
+												<!--密码框
+							js判密码是否为空true显示警示框(exclamation1) false显示对号(hook1)
+							判断密码是否小于六位数true显示警示框(exclamation1)提示密码不能小于六位数  false显示对号(hook1)
+							
+						-->
+						<input type="text" id="txt_yz" class="txt_yz"maxlength="4" placeholder="验证码" onblur="onblurs();" onKeyUp="value=value.replace(/[\W]/g,'')"/><!--onKeyUp="value=value.replace(/[\W]/g,'')"规定只能输入数字和字母-->
+						<input type="button" id="txt_yzm" class="txt_yzm" value="验证码" onclick="txtyzm()" />
+						<div id="exclamation3" class="exclamation3" style="line-height: 20px;">
+							<img src="img/exclamation_mark_32px.png" style="width: 20px; height: 20px; vertical-align: middle;"/>&nbsp;
+							<span style="color:red;" id="yz_error">验证码输入错误!</span>							
+						</div>
+						<!--验证框
+							js获取当前验证码，判断验证码与用户输入是否一致
+						-->
+						
+						<input type="submit" id="val" class="val" value="立即注册"   />						
+						<div id="check1" class="check1">
+							<img class="yes" id="yes" src="img/checkbox_check2x.png" onclick="yesW()" />
+							<span class="ysssr" >我已阅读并同意相关服务条款和隐私政策</span>
+							<img  class="arrow" id="arrow" src="img/arrow_down.png" onclick="Arr()"/>
+								<div class="arrow_policy" id="arrow_policy">
+								<a>《隐私政策》</a><br />
+								<a>《服务条款》</a><br />
+								<a>《不平等条约》</a>								
+								</div>							
+						</div>						
+					</div>
+				</form>
+			</div>		
+		</div>
 	</body>
 </html>
