@@ -1,0 +1,399 @@
+*{
+	
+	padding: 0px;
+	margin: 0px;
+	outline: none;	/*去除蓝色边框*/
+	font-family: "微软雅黑";
+	text-decoration: none;
+}
+
+	::-webkit-scrollbar {
+		  width: 8px;	
+		  height: 8px;
+	} /* 这是针对缺省样式 (必须的) */
+	::-webkit-scrollbar-track{
+		background-color: #FF00FF;	
+		border-radius: 5px;
+	}/*滑动条滑轨背景色*/
+	::-webkit-scrollbar-track-piece  { 
+		/*background-color: red;*/
+			
+		 }	
+	::-webkit-scrollbar-thumb{
+		background-color: purple;
+		border-radius: 5px;
+	}
+	/*::-webkit-scrollbar-button{
+		background-color: #FF00FF;		
+	}*/
+	/*滑轨两侧监听按钮*/
+	::-webkit-scrollbar-corner {
+		  background-color:#99CC66 ;
+	} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+	
+/*ie特有属性*/
+Body {
+	background-color: #FF99CC ;
+scrollbar-arrow-color: #f4ae21;  /*图6,三角箭头的颜色*/
+scrollbar-face-color: #333;  /*图5,立体滚动条的颜色*/
+scrollbar-3dlight-color: #666;  /*图1,立体滚动条亮边的颜色*/
+scrollbar-highlight-color: #666;  /*图2,滚动条空白部分的颜色*/
+scrollbar-shadow-color: #999;  /*图3,立体滚动条阴影的颜色*/
+scrollbar-darkshadow-color: #666;  /*图4,立体滚动条强阴影的颜色*/
+scrollbar-track-color: #666;  /*图7,立体滚动条背景颜色*/
+
+scrollbar-base-color:#f8f8f8;  /*滚动条的基本颜色*/
+Cursor:url(mouse.cur);  /*自定义个性鼠标*/
+}
+
+.snow{position:absolute;top:0;color:#fff;}
+
+
+/***********t头部***************/
+.header_m{	
+	width: auto;
+	height: 100%;	
+	background-image: url(../img/xyc.jpg);
+	background-repeat: no-repeat;
+}
+.rili_frame{
+
+	width: 270px;
+	height: 600px;
+	/*border: 1px solid red;*/	
+
+}
+.rili_place{
+	/*width: 270px;
+	height: 50px;
+	border: 1px solid hotpink;
+	display: block;*/
+	
+}
+.rili_time{
+	display: block;
+	float: left;
+	height: 75px;
+	width: 270px;
+	/*border: 1px solid purple;*/
+	margin-top: 300px;
+}
+.time_p{
+	text-align: center;
+	font-size: 35px;
+	opacity: 0.5;
+}
+.time_month{
+	margin-left: 73px;
+	text-align: left;
+	font-size: 15px;
+	opacity: 0.5;
+	
+}
+.year{
+	width: 100px;
+	height: 50px;
+	border: yellow;
+}
+/*日历部分*/
+.rili_place{
+	
+}
+.place_top{
+	float: left;
+	height: 40px;
+	width: 100%;
+	padding-bottom: 5px;
+	list-style: none;
+	line-height:50px ;
+	margin: 0px 5px;
+	cursor: pointer;
+	font-size: 20px;
+	color: white;
+	opacity: 0.5;
+	/*border: 1px solid red;*/
+	border-bottom: 2px solid red;
+	
+}
+.place_l{
+	float: left;
+	
+}
+.place_l:hover{
+	color: black;
+}
+.place_r{
+	float: right;
+}
+.place_r:hover{
+	color: black;
+}
+.place_c{	
+	text-align: center;	
+}
+/****************************日历**************************************/
+.table{
+	width:100%;
+	text-align: center;
+	border-collapse: collapse;
+
+}
+.table tadezone{
+	
+}
+
+/*********日历主体部分*********/
+.rilisub{
+
+}
+/*8**********************************************************************/
+
+.right_lang{
+	width: 556px;
+	height: 113px;
+	display: block;
+	/*border: 1px solid red;*/
+	position: absolute;
+	top: 38px;
+	left: 707px;
+
+	
+	
+}
+.right_lang_rhesis{
+	width: 500px;
+	height: 60px;
+	/*border:1px solid yellow;*/
+	margin: auto;
+	margin-top: 20px;
+	
+}
+.rhesis{
+	line-height: 30px;
+	font-family: "微软雅黑";
+	color:black;
+	font-size: 18px;
+	text-indent: 20px;
+	
+}
+.right_lang_author{
+	/*border: 1px solid royalblue;*/
+	width: 500px;
+	height: 40px;
+	margin: auto;
+}
+.author{
+	color: purple;
+	float: right;
+	margin-top: 5px;
+}
+.author a{
+		cursor: pointer;
+}
+.author a:link{
+	color: purple;
+}
+.author a:visited{
+	color: purple;
+}
+
+
+
+/******轮播*******/
+.lunbo{
+	width: 400px;
+	height: 250px;
+	border: 2px solid purple;
+	display: block;
+	position: absolute;
+	top: 300px;
+	left: 400px;
+	overflow: hidden;	
+	  -webkit-box-shadow: -5px 5px 5px #9966cc;  
+  -moz-box-shadow: -5px 5px 5px #9966cc;  
+  box-shadow: -5px 5px 5px #9966cc; 
+}
+.lunbo_k{
+	width: calc(400px * 4);
+	height: 250px;
+	/*border: 1px  solid yellow;*/
+	position: absolute;
+	/*animation: lunbo 20s ease-out infinite alternate;*/	
+}
+.lunbo_k img{
+	float: left;
+	width: 400px;
+	height: 250px;
+	
+}
+
+
+.dot{
+	margin: auto;
+	display: block;
+}
+.dot_ul{
+	width: 115px;
+	height: 20px;
+	/*border:1px solid red;*/
+	position: relative;
+	margin: auto;
+	margin-top: 225px;	
+	list-style: none;
+}
+.dot_ul li {
+	background-image: url(../img/lx_gray.svg);
+	background-repeat: no-repeat;
+	width: 18px;
+	height: 18px;
+	float: left;
+	display: block;
+	margin: 0px 5px;
+}
+ .dot_on{
+	background-image: url(../img/lx_purple.svg) ;
+}
+/*轮播图片动画效果*/
+/*@keyframes lunbo{
+	0%,15%{ margin-left: 0px;}
+	15%,25%{margin-left: 0px;}
+	25%,40%{ margin-left: -400px;}
+	40%,50%{ margin-left: -400px;}
+	50%,65%{ margin-left: -800px;}
+	65%,75%{ margin-left: -800px;}
+	75%,90%{ margin-left: -1200px;}
+	90%,100%{ margin-left: -1200px;}
+}*/
+.but_left{
+	position: absolute;
+	top: 50%;
+	opacity: 0.4;
+	
+}
+.but_right{
+	position:absolute;
+	top: 50%;
+	left: 368px;
+	opacity: 0.4;
+}
+.but_left img:hover{
+	opacity: 1;
+}
+.spin{
+	display: block;
+	width: 100px;
+	height: 150px;
+	position: fixed;
+	right: 0px;
+	top: 50%;
+	background-image: url(../img/spig.png);
+	background-repeat: no-repeat;	
+	cursor: move;
+	/*transform: rotate(30deg);	*/
+}
+/*浏览框*/
+#header{
+
+	width: 100%;
+	height: 50px;
+	background-color: #996699;
+	/*1、filter：对win IE设置半透明滤镜效果，filter:alpha(Opacity=80)代表该对象80%半透明，火狐浏览器不认
+	2、-moz-opacity：对mozilla firefox火狐浏览器实现半透明，win IE不认此属性，-moz-opacity:0.5相当于设置半透明为50%
+	3、opacity：对除IE外所有浏览器支持包括谷歌，放最后主要针对谷歌浏览器，opacity: 0.5;表示设置50%半透明*/
+	/*/不同浏览器兼容透明*/
+	/*filter:alpha(Opacity=10);
+	-moz-opacity:0.1;
+	opacity: 0.1;
+	*/
+}
+#ul1{
+	width:950px ;
+	list-style: none;
+	margin-left: 100px;		
+		
+}
+/*搜索框*/
+#serch{
+	display: inline;	
+	width: 200px;
+	height: 50px;
+}
+#serch_but{
+	height: 50px;
+	width: 40px;
+	/*line-height: 50px;*/
+	background-color: #996699;
+	border: 0px;
+	float: left;
+	margin-left: 150px;
+	
+}
+
+#serch_but img{
+	padding: 13px 13px;
+}
+#serch_but img:hover{
+	background-color: #990099;
+}
+#serch_txt{
+	height: 50px;
+	border:none;
+	float: left;
+	font-size: 14px;
+	background-color: #990099;		
+	line-height: 50px;
+	display: none;	
+	color: white;
+	
+	
+}
+
+#ul2{
+	display: block;
+	width:490px ;
+	float: right;
+	list-style: none;
+	position: absolute;
+	left: 60%;
+	
+}
+
+.ul2 li{float:left;}
+.ul1 li{float: left;}
+
+.ul1 li a{
+
+ 	display: block;
+ 	width: 100px;
+ 	text-align: center;
+/* 	border:1px solid red;*/
+ 	/*padding: 15px 10px;*/
+ 	line-height: 50px;
+ 	 /* 设置行高，将行高和高度设置同一个值，可以让单行文本垂直居中 */	
+	color: #999999;
+	font-family: "微软雅黑";
+	font-size: 17px;
+	text-decoration: none;
+}
+.ul2 li a{
+	display: block;
+ 	width: 100px;
+ 	text-align: center;
+/* 	border:1px solid red;*/
+ 	/*padding: 15px 10px;*/
+ 	line-height: 50px;
+ 	 /* 设置行高，将行高和高度设置同一个值，可以让单行文本垂直居中 */	
+	color: #999999;
+	font-family: "微软雅黑";
+	font-size: 17px;
+	text-decoration: none;
+}
+.ul2 li a:hover {
+	color:white;
+	background-color: #990099;
+}
+.ul1 li a:hover {
+	color:white;
+	background-color: #990099;
+}
+
