@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/home_header.css" />
+		<link rel="stylesheet" href="css/home_content.css" />
+		<link rel="shortcut icon"href="img/16X16.ico" />
+		<script type="text/javascript" src="js/home.js" ></script>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/xuehua.js"></script>
+		<script type="text/javascript" src="js/rili.js"></script>
+		<title>孙健刚的个人首页</title>
+		<link rel="shortcut icon" href="img/16X16.ico"/>
+	</head>
+	<body>
+		
+		<div class="header_m">
+				<div id="rili_frame" class="rili_frame">				
+						<div id="rili_time" class="rili_time" onload="rilitime()">
+							<p id="time_p" class="time_p"></p>
+							<p id="time_month" class="time_month"></p>												
+						</div>
+						
+							<ul class="place_top">
+								<li class="place_l"  onclick="placel()" > ❮ </li>
+								<li class="place_r" onclick="placer()" > ❯ </li>
+								<li class="place_c" id="place_c"></li>
+							</ul>
+					
+						<table class="table">
+							<thead id="tadezone" class="tadezone">
+								<tr>
+									<td>日</td>
+									<td>一</td>
+									<td>二</td>
+									<td>三</td>
+									<td>四</td>
+									<td>五</td>
+									<td>六</td>	
+								</tr>
+								<tr>
+									<td id="rilisub" class="rilisub"> </td>
+								</tr>
+							</thead>
+						</table>
+				</div>
+				
+				<div class="right_lang">
+					<div class="right_lang_rhesis">
+						<p id="rhesis" class="rhesis">
+						要有最朴素的生活，和最遥远的梦想，即使明日天寒地冻，路遥马亡。
+						</p>
+					</div>
+					<div class="right_lang_author">
+						<span id="author" class="author">
+							——<a title="原作者：海子"   target="_blank" href="https://baike.baidu.com/item/%E6%B5%B7%E5%AD%90/205722?fr=aladdin">海子</a>
+							<a title="原著:枫" target="_blank" href="https://baike.baidu.com/item/%E6%9E%AB/15089242?fr=aladdin">《枫》</a>
+							
+						</span>
+					</div>
+				</div>
+				<div id="lunbo" class="lunbo">
+					
+					<div id="lunbo_k" class="lunbo_k">
+						<a href="#"><img title="泰妍" src="img/taiyan4001.jpg"/></a>	
+						<a href="#"><img title="泰妍" src="img/taiyan4002.jpg"/></a>	
+						<a href="#"><img title="泰妍" src="img/taiyan4003.jpg"/></a>	
+						<a href="#"><img title="泰妍" src="img/taiyan4004.jpg"/></a>						
+					</div>
+					
+					<div id="dot" class="dot">
+						<ul id="dot_ul" class="dot_ul">
+							<li id="dot0" class="dot0"></li>
+							<li id="dot1" class="dot1"></li>
+							<li id="dot2" class="dot2"></li>
+							<li id="dot3" class="dot3"></li>
+						</ul>
+					</div>
+					
+					<div id="but_left" class="but_left" >
+						<img title="上一页" src="img/sj_left.png"  onmouseout="but_left_out()" onmouseover="but_left_over()" />
+					</div>
+					
+					<div id="but_right" class="but_right">
+						<img  title="下一页" src="img/sj_right.png" onmouseout="but_right_out()" onmouseover="but_right_over()" />
+					</div>
+					<div class="spin" id="spin"></div>
+				</div>
+				<div id="header" class="header">
+			<ul id="ul1" class="ul1">
+				<li><a href="#">Note</a>
+					
+				</li>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">笔记</a></li>
+				<li><a href="#">网站连接</a></li>
+			</ul>
+			
+			<!--搜索框-->
+			
+			<ul id="ul2" class="ul2">
+				<li>
+				<div id="serch" class="serch" onmouseout="serch_out() "onmouseover="but_over()"  >
+					<button id="serch_but" type="submit"  ><img src="img/sousuo.svg" /></button><input id="serch_txt" type="text" placeholder="输入关键字搜索" />					
+				</div>
+				</li>
+				<li><a href="#">登陆</a></li>
+				<li><a href="#">退出</a></li>
+			</ul>		
+		</div>
+					
+	</div>	
+			<!--内容-->	
+		<div class="content">
+			<div class="content_left">
+				<ul class="content_left_ul1"  id="ul3">
+					<li ><h2>学习资料</h2></li>
+				</ul>
+				<ul id="contentul">
+					<li  onclick="dropdown(this)" ><a title="HTML" >HTML<img src="img/jintou_down.png" /></a> 
+						<ul>
+							<li><a href="#">HTML基础<img src="img/jiantou_right.png" /></a></li>
+							<li><a href="#">HTML XHTML<img src="img/jiantou_right.png" /></a></li>
+						</ul>
+					</li>
+					
+						
+					<div class="content_html" id="contenttable">
+						<table class="content_html_table">
+							<caption><h2>HTML基础教程</h2></caption>
+							<tr>								
+								<td><a href="#">HTML教程</a></td>
+								<td><a href="#">HTML简介</a></td>
+								<td><a href="#">HTML编辑器</a></td>
+								<td><a href="#">HTML基础</a></td>
+								<td><a href="#">HTML元素</a></td>				
+							</tr>
+							<tr>
+								<td><a href="#">HTML属性</a></td>	
+								<td><a href="#">HTML标题</a></td>	
+								<td><a href="#">HTML段落</a></td>	
+								<td><a href="#">HTML样式</a></td>	
+								<td><a href="#">HTML格式化</a></td>	
+							</tr>
+							<tr>
+								<td><a href="#">HTML引用</a></td>	
+								<td><a href="#">HTML计算机代码</a></td>	
+								<td><a href="#">HTML注释</a></td>	
+								<td><a href="#">HTMLCSS</a></td>	
+								<td><a href="#">HTML链接</a></td>	
+							</tr>
+							<tr>
+								<td><a href="#">HTML图像</a></td>	
+								<td><a href="#">HTML表格</a></td>	
+								<td><a href="#">HTML列表</a></td>	
+								<td><a href="#">HTML块</a></td>	
+								<td><a href="#">HTML类</a></td>	
+							</tr>
+							<tr>
+								<td><a href="#">HTML布局</a></td>	
+								<td><a href="#">HTML响应式设计</a></td>	
+								<td><a href="#">HTML框架</a></td>	
+								<td><a href="#">HTML内联框架</a></td>	
+								<td><a href="#">HTML背景</a></td>	
+							</tr>
+							<tr>
+								<td><a href="#">HTML脚本</a></td>	
+								<td><a href="#">HTML头部</a></td>	
+								<td><a href="#">HTML实体</a></td>	
+								<td><a href="#">HTMLURL</a></td>	
+								<td><a href="#">HTMLURL编码</a></td>	
+							</tr>
+							<tr>
+								<td><a href="#">HTMLWeb服务器</a></td>	
+								<td><a href="#">HTML颜色</a></td>	
+								<td><a href="#">HTML颜色名</a></td>	
+								<td><a href="#">HTML文档类型</a></td>	
+								<td><a href="#">HTML速查手册</a></td>	
+							</tr>
+						</table>
+					</div>
+				</ul>
+				<ul>
+					<li  onclick="dropdown(this)"  ><a title="CSS" >CSS<img src="img/jintou_down.png" /></a>
+						<ul>
+							<li><a href="#">CSS基础<img src="img/jiantou_right.png" /></a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li onclick="dropdown(this)"  ><a title="JS" >JavaScript <img src="img/jintou_down.png" /></a>
+						<ul>
+							<li><a href="#">JavaScript基础<img src="img/jiantou_right.png" /></a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li  onclick="dropdown(this)"  ><a title="jq" >jQuery <img src="img/jintou_down.png" /></a>
+						<ul>
+							<li><a href="#">jQuery基础 <img src="img/jiantou_right.png" /></a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			</div>
+			<div class="content_middle">
+				
+			</div>
+			<div class="content_right"></div>
+		</div>
+	</body>
+</html>
