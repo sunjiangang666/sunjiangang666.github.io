@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>album</title>
+    <link rel="stylesheet" href="css/album.css">
+</head>
+<body>
+
+<!-- 代码部分begin -->
+<div id="wrap" class="wrap">
+    <div class="photo" id="photo_{{index}}" onclick="turn(this)">
+        <div class="photo_wrap" >
+            <div class="side side_front">
+                <div class="image">
+                    <img src="images/{{img}}" alt="{{alt}}"/>
+                </div>
+                <div class="capation">
+                    {{caption}}
+                </div>
+            </div>
+            <div class="side side_back">
+                <div class="desc">
+                    {{desc}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+	var myData = [];
+var myDataStr = "1.赵梦歌<br>\
+<br>\
+姓名:赵梦歌<br>\
+别名:宝宝<br>\
+年龄:未知<br>\
+出生日期:不记得<br>\
+性别:女<br>\
+爱好:吃<br>\
+身高:155cm<br>\
+国籍:中国<br>\
+<br>\
+<br>\
+2.么么哒<br>\
+<br>\
+姓名:赵梦歌<br>\
+别名:宝宝<br>\
+年龄:未知<br>\
+出生日期:不记得<br>\
+性别:女<br>\
+爱好:吃<br>\
+身高:155cm<br>\
+国籍:中国<br>\
+<br>\
+<br>\
+3.呵呵哒<br>\
+<br>\
+姓名:赵梦歌<br>\
+别名:宝宝<br>\
+年龄:未知<br>\
+出生日期:不记得<br>\
+性别:女<br>\
+爱好:吃<br>\
+身高:155cm<br>\
+国籍:中国<br>\
+<br>\
+<br>\
+4.泰妍<br>\
+<br>\
+中文名:金泰妍<br>\
+外文名:김태연（Kim TaeYeon）<br>\
+别名:Taeyeon，太妍<br>\
+身高:158cm<br>\
+职业:歌手<br>\
+出生日期:1989年3月9日<br>\
+国籍:韩国<br>\
+星座:双鱼座<br>\
+<br>\
+<br>\
+5.金泰妍<br>\
+<br>\
+中文名:金泰妍<br>\
+外文名:김태연（Kim TaeYeon）<br>\
+别名:Taeyeon，太妍<br>\
+身高:158cm<br>\
+职业:歌手<br>\
+出生日期:1989年3月9日<br>\
+国籍:韩国<br>\
+星座:双鱼座<br>\
+<br>\
+<br>\
+6.抽抽<br>\
+<br>\
+中文名:金泰妍<br>\
+外文名:김태연（Kim TaeYeon）<br>\
+别名:Taeyeon，太妍<br>\
+身高:158cm<br>\
+职业:歌手<br>\
+出生日期:1989年3月9日<br>\
+国籍:韩国<br>\
+星座:双鱼座<br>\
+<br>\
+<br>\
+7.纸片人<br>\
+<br>\
+中文名:金泰妍<br>\
+外文名:김태연（Kim TaeYeon）<br>\
+别名:Taeyeon，太妍<br>\
+身高:158cm<br>\
+职业:歌手<br>\
+出生日期:1989年3月9日<br>\
+国籍:韩国<br>\
+星座:双鱼座<br>\
+<br>\
+<br>\
+8.光<br>\
+<br>\
+中文名:金泰妍<br>\
+外文名:김태연（Kim TaeYeon）<br>\
+别名:Taeyeon，太妍<br>\
+身高:158cm<br>\
+职业:歌手<br>\
+出生日期:1989年3月9日<br>\
+国籍:韩国<br>\
+星座:双鱼座<br>\
+<br>\
+<br>\
+9.粉红<br>\
+<br>\
+中文名:金泰妍<br>\
+外文名:김태연（Kim TaeYeon）<br>\
+别名:Taeyeon，太妍<br>\
+身高:158cm<br>\
+职业:歌手<br>\
+出生日期:1989年3月9日<br>\
+国籍:韩国<br>\
+星座:双鱼座<br>\
+<br>\
+<br>\
+10.女王<br>\
+<br>\
+中文名:金泰妍<br>\
+外文名:김태연（Kim TaeYeon）<br>\
+别名:Taeyeon，太妍<br>\
+身高:158cm<br>\
+职业:歌手<br>\
+出生日期:1989年3月9日<br>\
+国籍:韩国<br>\
+星座:双鱼座<br>\
+<br>\
+<br>\
+11.大长腿<br>\
+<br>\
+中文名:金泰妍<br>\
+外文名:김태연（Kim TaeYeon）<br>\
+别名:Taeyeon，太妍<br>\
+身高:158cm<br>\
+职业:歌手<br>\
+出生日期:1989年3月9日<br>\
+国籍:韩国<br>\
+星座:双鱼座<br>\
+"
+//定义函数分割myData数据 , myData接收分好组的数据 :以三个连续的<br>\标记为分界
+
+var d = myDataStr.split("<br><br><br>");   //以三个br分出不同大主题
+for(var i=0 ;i< d.length;i++){
+    var c = d[i].split("<br><br>");
+    myData.push(
+        {
+            img:c[0].replace('.',"")+".jpg",
+            caption:c[0].split('.')[1],
+            desc:c[1]
+        }
+    )
+}
+</script>
+<script src="js/album.js"></script>
+<!-- 代码部分end -->
+
+</body>
+</html>
