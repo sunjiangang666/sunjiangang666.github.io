@@ -173,13 +173,13 @@ Cursor:url(mouse.cur);  /*自定义个性鼠标*/
 		<div class="lang_">			
 			<h1>孙健刚的个人网站</h1>			
 			<form action="home.html" method="get" onsubmit="return sub();">
-				<p>用户名称&nbsp;:&nbsp;<input type="text"name="user" id="user" /><br /></p>
+				<p>用户名称&nbsp;:&nbsp;<input type="text"name="user" id="user" tabindex="1"/><br /></p>
 				<span class="err" id="err">用户名错误！</span>
-				<a  href="register.html">没有账户？</a>	
+				<a  href="register.html" tabindex="-1">没有账户？</a>	
 				<br />				
-				<p>用户密码&nbsp;:&nbsp;<input type="password" name="pass" id="pass"/><br /></p>
-				<span class="err1" id="err1">密码错误！</span>
-				<a href="#">忘记密码！</a>
+				<p>用户密码&nbsp;:&nbsp;<input type="password" name="pass" id="pass" tadindex="2"/><br /></p>
+				<span class="err1" id="err1" >密码错误！</span>
+				<a href="#" tabindex="-1">忘记密码！</a>
 				<br/>
 					<input  class="sub1" type="submit" name="dl" value="登  陆" />					
 					<input class="sub1" type="reset" name="res"value="取  消" />
