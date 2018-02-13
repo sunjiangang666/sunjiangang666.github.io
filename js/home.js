@@ -427,4 +427,3 @@ function dropdown(li){
 
 //元素.getAttribute() //传入属性名,获得该属性对应的值
 
-
