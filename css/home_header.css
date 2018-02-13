@@ -76,7 +76,7 @@ Cursor:url(mouse.cur);  /*自定义个性鼠标*/
 	height: 75px;
 	width: 270px;
 	/*border: 1px solid purple;*/
-	margin-top: 300px;
+	margin-top:230px;
 }
 .time_p{
 	text-align: center;
@@ -96,10 +96,7 @@ Cursor:url(mouse.cur);  /*自定义个性鼠标*/
 	border: yellow;
 }
 /*日历部分*/
-.rili_place{
-	
-}
-.place_top{
+/*.place_top{
 	float: left;
 	height: 40px;
 	width: 100%;
@@ -111,11 +108,9 @@ Cursor:url(mouse.cur);  /*自定义个性鼠标*/
 	font-size: 20px;
 	color: white;
 	opacity: 0.5;
-	/*border: 1px solid red;*/
-	border-bottom: 2px solid red;
-	
-}
-.place_l{
+	border-bottom: 2px solid red;	
+}*/
+/*.place_l{
 	float: left;
 	
 }
@@ -130,21 +125,114 @@ Cursor:url(mouse.cur);  /*自定义个性鼠标*/
 }
 .place_c{	
 	text-align: center;	
-}
+}*/
 /****************************日历**************************************/
-.table{
-	width:100%;
-	text-align: center;
-	border-collapse: collapse;
-
+.calendar{
+ width: 250px;
+  height: 500px;
+  display: block;
+  margin-left:13px
 }
-.table tadezone{
+ 
+/**
+ * 设置日历顶部盒子
+ */
+.calendar .calendar-title-box{
+  position: relative;
+  width: 100%;
+  height:45px;
+  line-height: 55px;
+  text-align:center;
+  font-size: 18px;
+  border-bottom: 1px solid #ddd;
+}
+.calendar-title-box{
+	float: left;
+	position:absolute;
 	
+	/*border: 1px solid red;*/
+
 }
-
-/*********日历主体部分*********/
-.rilisub{
-
+ 
+/**
+ * 设置上个月的按钮图标
+ */
+.calendar .prev-month {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  border-left: 0px;
+  border-top: 8px solid transparent;
+  border-right: 10px solid #FF0033;
+  border-bottom: 8px solid transparent;
+  opacity: 0.5;
+  cursor: pointer;
+  border-radius: 80px;
+}
+ .prev-month:hover{
+ 	transform:scale(2);
+ 	    -webkit-transform:scale(2);
+    -moz-transform:scale(2);
+ 	opacity: 0.9; 
+ 	}
+/**
+ * 设置下个月的按钮图标
+ */
+.calendar .next-month {
+	  position: absolute;
+	  top: 20px;
+	  right: 10px;
+	  /*display: inline-block;*/
+	  width: 0px;
+	  height: 0px;
+	  border-right: 0px;
+	  border-top: 8px solid transparent;
+	  border-left: 10px solid #FF0033;
+	  border-bottom: 8px solid transparent;
+	  cursor: pointer; 
+	  border-radius: 80px;
+	  opacity: 0.5;
+}
+.next-month:hover{
+	transform:scale(2);
+	    -webkit-transform:scale(2);
+    -moz-transform:scale(2);
+	opacity: 0.9;
+}
+ 
+ 
+/* 设置日历表格样式 */
+.calendar-table{
+  width: 100%;
+  border-collapse: collapse;
+  text-align:center;
+}
+ 
+/* 表格行高 */
+.calendar-table tr{
+  height: 30px;
+  line-height: 30px;
+}
+ 
+/* 当前天 颜色特殊显示 */
+.currentDay {
+  color:#CC0099;
+  font-size: 20px;
+}
+ 
+/* 本月 文字颜色 */
+.currentMonth {
+  color: purple;
+  
+}
+ 
+/* 其他月颜色 */
+.otherMonth{
+  color: #66CCCC;
+  opacity: 0.6;
 }
 /*8**********************************************************************/
 
@@ -289,8 +377,22 @@ Cursor:url(mouse.cur);  /*自定义个性鼠标*/
 	background-image: url(../img/spig.png);
 	background-repeat: no-repeat;	
 	cursor: move;
+	animation:spin 5s infinite ;
+	animation-direction:alternate ;
+	-webkit-animation-direction:alternate;
+	-moz-animation-direction:alternate ;
+	-o-animation-direction: alternate;
 	/*transform: rotate(30deg);	*/
 }
+
+@keyframes spin{
+	0%{right: 40px;}
+	25%{right: 80px;}
+	50%{right: 120px;}
+	75%{right: 160px;}
+	100%{right: 200px;}
+}
+
 /*浏览框*/
 #header{
 
